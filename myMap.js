@@ -29,13 +29,13 @@ function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         credentials: 'AmGfXoPF5L4OcyP3y1T7R9POld5vCh6OkxuB9eRsNaqVvd6J6Z3hHZUWyh79THjC'
     });
-    map_manager.map=map
+    map_manager.map=map;
     
     for (var i in map_manager.map_items) {
     var map_item = map_manager.map_items[i];
     var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
-                                             { icon: 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_item['pokemon_id'] + '.png',
-                                              title: get_counter_down_time_from_expire_epoch(map_item['expire']) });
+                                             { icon: 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_item["pokemon_id"] + '.png',
+                                              title: get_counter_down_time_from_expire_epoch(map_item["expire"]) });
     map.entities.push(pushpin);
     }
 
