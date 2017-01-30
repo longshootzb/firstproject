@@ -13,8 +13,8 @@ map_manager.map_items = [
     {
       "pokemon_id" : 2,
       "expire" : 1476589403,
-      "longitude" : 126.5500345,
-      "latitude" : 43.8396651,
+      "longitude" : 126.5500945,
+      "latitude" : 43.8396951,
     }
 ]
 function get_counter_down_time_from_expire_epoch(epoch) {
