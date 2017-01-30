@@ -30,7 +30,7 @@ function loadMapScenario() {
         credentials: 'AmGfXoPF5L4OcyP3y1T7R9POld5vCh6OkxuB9eRsNaqVvd6J6Z3hHZUWyh79THjC'
     });
     map_manager.map=map;
-    
+    var pushpins = []
     for (var i in map_manager.map_items) {
     var map_item = map_manager.map_items[i];
     var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
