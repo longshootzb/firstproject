@@ -34,7 +34,7 @@ function loadMapScenario() {
     for (var i in map_manager.map_items) {
     var map_item = map_manager.map_items[i];
     var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
-                                             { icon: 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_manager["pokemon_id"] + '.png',
+                                             { icon: 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_manager['pokemon_id'] + '.png',
                                               title: get_counter_down_time_from_expire_epoch(map_item['expire']) });
     map.entities.push(pushpin);
     }
