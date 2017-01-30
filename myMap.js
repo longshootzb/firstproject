@@ -31,7 +31,7 @@ function loadMapScenario() {
     });
     map_manager.map=map
     
-    for (var i in map_items) {
+    for (var i in map_manager.map_items) {
     var map_item = map_items[i];
     var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
                                              { icon: 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_manager["pokemon_id"] + '.png',
