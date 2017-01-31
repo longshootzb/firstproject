@@ -21,7 +21,9 @@ map_manager.map_items = [
 function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         credentials: 'AmGfXoPF5L4OcyP3y1T7R9POld5vCh6OkxuB9eRsNaqVvd6J6Z3hHZUWyh79THjC'
-    });  
+    }); 
+    map_manager.map=map;
+    window.setInterval(refresh_pokemon_layer, 1000);
 }
 // 1. Define pokemon data format, create mock pokemon data
 function get_counter_down_time_from_expire_epoch(epoch) {
@@ -56,4 +58,4 @@ function refresh_pokemon_layer() {
   // Add new layer
   map_manager.map.layers.insert(pokemon_layer);
 }
-window.setInterval(refresh_pokemon_data, 1000);
+
