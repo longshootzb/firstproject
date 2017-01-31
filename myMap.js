@@ -6,13 +6,13 @@ var map_manager = {
 map_manager.map_items = [
     {
       "pokemon_id" : 11,
-      "expire" : 1476589403,
+      "expire" : 1485835200,
       "longitude" : 126.5500345,
       "latitude" : 43.8396651,
     },
     {
       "pokemon_id" : 12,
-      "expire" : 1476589403,
+      "expire" : 1485835200,
       "longitude" : 126.5500945,
       "latitude" : 43.8396951,
     }
