@@ -11,7 +11,7 @@ map_manager.map_items = [
       "latitude" : 43.8396651,
     }
 ]
-query_pokemon_data(){
+query_pokemon_data() {
     var bounds=map_manager.map.getBounds();
     var apigClient = apigClientFactory.newClient();
     var params = {
