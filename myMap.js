@@ -3,7 +3,14 @@ var map_manager = {
     "map_items" : []
 }
 
-
+map_manager.map_items = [
+    {
+      "pokemon_id" : 12,
+      "expire" : 1476589403,
+      "longitude" : -73.9800345,
+      "latitude" : 40.7596651,
+    }
+]
 
 function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
