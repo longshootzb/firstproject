@@ -11,12 +11,32 @@ map_manager.map_items = [
       "latitude" : 43.8396651,
     }
 ]
+query_pokemon_data(){
+    var bounds=map_manager.map.getBounds();
+    var apigClient = apigClientFactory.newClient();
+    var params = {
+        //This is where any header, path, or querystring request params go. The key is the parameter named as defined in the API
+        north: 'bounds.getNorth()',
+        south: 'bounds.getSouth()',
+        west:'bounds.getwest()',
+        east:'bounds.getEast()'
+    };
+
+    apigClient.mapPokemonGet(params, {}, {})
+        .then(function(result){
+            console.log(result);
+            //This is where you would put a success callback
+        }).catch( function(result){
+            //This is where you would put an error callback
+        });
+}
 
 function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         credentials: 'AmGfXoPF5L4OcyP3y1T7R9POld5vCh6OkxuB9eRsNaqVvd6J6Z3hHZUWyh79THjC'
     }); 
     map_manager.map=map;
+    query_pokemon_data();
     window.setInterval(refresh_pokemon_layer, 1000);
 }
 // 1. Define pokemon data format, create mock pokemon data
