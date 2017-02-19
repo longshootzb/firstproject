@@ -38,6 +38,7 @@ function loadMapScenario() {
     }); 
     map_manager.map=map;
     query_pokemon_data();
+    refresh_pokemon_layer();
     window.setInterval(refresh_pokemon_layer, 1000);
 }
 // 1. Define pokemon data format, create mock pokemon data
@@ -55,22 +56,23 @@ function get_pokemon_layer_from_map_items(map_items) {
     var pushpins = []
     for (var i in map_manager.map_items) {
         var map_item = map_manager.map_items[i];
+        var icon_url = 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_item["pokemon_id"] + '.png',
+        var count_down = get_counter_down_time_from_expire_epoch(map_item["expire"])
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
-                                                 { icon: 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_item["pokemon_id"] + '.png',
-                                                  title: get_counter_down_time_from_expire_epoch(map_item["expire"]) });
+                                                 { icon: icon_url,
+                                                   title: count_down });
         pushpins.push(pushpin)
     }
     layer.add(pushpins);
-    return layer;
 }
 
 // 3. Add pokemon counter down refresh.
 function refresh_pokemon_layer() {
-  // Prepare new layer
+  // 1、Prepare new layer
   var pokemon_layer = get_pokemon_layer_from_map_items(map_manager.map_items)
-  // Remove old layer
+  // 2、Remove old layer
   map_manager.map.layers.clear()
-  // Add new layer
+  // 3、Add new layer
   map_manager.map.layers.insert(pokemon_layer);
 }
 
