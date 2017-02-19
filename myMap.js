@@ -54,14 +54,14 @@ function get_counter_down_time_from_expire_epoch(epoch) {
 function refresh_pokemon_layer() {
   // 1、Prepare new layer
     var layer = new Microsoft.Maps.Layer();
-    var pushpins = []
+    var pushpins = [];
     for (var i in map_manager.map_items) {
         var map_item = map_manager.map_items[i];
-        var icon_url = 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_item["pokemon_id"] + '.png',
-        var count_down = get_counter_down_time_from_expire_epoch(map_item["expire"]),
+        var icon_url = 'https://raw.githubusercontent.com/longshootzb/firstproject/master/pokemon/' + map_item["pokemon_id"] + '.png';
+        var count_down = get_counter_down_time_from_expire_epoch(map_item["expire"]);
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
-                                                 { icon: icon_url,
-                                                   title: count_down });
+                                                 {title: count_down,
+                                                  icon: icon_url});
         pushpins.push(pushpin)
     }
     layer.add(pushpins);
