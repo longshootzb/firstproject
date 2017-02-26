@@ -18,7 +18,7 @@ function query_pokemon_data() {
         //This is where any header, path, or querystring request params go. The key is the parameter named as defined in the API
         north: 'bounds.getNorth()',
         south: 'bounds.getSouth()',
-        west:'bounds.getwest()',
+        west:'bounds.getWest()',
         east:'bounds.getEast()'
     };
 
