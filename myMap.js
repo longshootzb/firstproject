@@ -24,7 +24,8 @@ function query_pokemon_data() {
 
     apigClient.mapPokemonGet(params, {}, {})
         .then(function(result){
-          map_manager.map_items = result.data; 
+         console.log(result.data); 
+         map_manager.map_items = result.data; 
             //This is where you would put a success callback
         }).catch( function(result){
             console.log(result);
