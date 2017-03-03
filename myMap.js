@@ -38,7 +38,7 @@ function loadMapScenario() {
         credentials: 'AmGfXoPF5L4OcyP3y1T7R9POld5vCh6OkxuB9eRsNaqVvd6J6Z3hHZUWyh79THjC'
     }); 
     map_manager.map=map;
-    window.setInterval(query_pokemon_data, 5000);
+    window.setInterval(query_pokemon_data, 1000);
     window.setInterval(refresh_pokemon_layer, 1000);
 }
 // 1. Define pokemon data format, create mock pokemon data
