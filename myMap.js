@@ -16,10 +16,10 @@ function query_pokemon_data() {
     var apigClient = apigClientFactory.newClient();
     var params = {
         //This is where any header, path, or querystring request params go. The key is the parameter named as defined in the API
-        north: 'bounds.getNorth()',
-        south: 'bounds.getSouth()',
-        west:'bounds.getWest()',
-        east:'bounds.getEast()'
+        north: bounds.getNorth(),
+        south: bounds.getSouth(),
+        west: bounds.getWest(),
+        east: bounds.getEast()
     };
 
     apigClient.mapPokemonGet(params, {}, {})
