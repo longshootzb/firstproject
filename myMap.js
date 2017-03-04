@@ -5,10 +5,7 @@ var map_manager = {
 
 map_manager.map_items = [
     {
-      "pokemon_id" : 12,
-      "expire" : 1476589403,
-      "longitude" : 126.4400345,
-      "latitude" : 43.8396651,
+      
     }
 ]
 function query_pokemon_data() {
