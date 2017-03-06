@@ -41,7 +41,7 @@ function loadMapScenario() {
 // 1. Define pokemon data format, create mock pokemon data
 function get_counter_down_time_from_expire_epoch(epoch) {
   var now_time = new Date().getTime() / 1000;
-  var time_left = epoch / 1000 - now_time + 1000000000;   // unit: second
+  var time_left = epoch / 1000 - now_time ;   // unit: second
   var second = Math.floor(time_left % 60);
   var minute = Math.floor(time_left / 60);
   return minute + ":" + second;
